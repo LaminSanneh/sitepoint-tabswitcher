@@ -6,7 +6,7 @@ export default Ember.Route.extend({
       {
         title: 'Tab 1',
         content: 'Some content for the tab 1'
-      }, 
+      },
       {
         title: 'Tab 2',
         content: 'Some content for the tab 2'
@@ -16,6 +16,9 @@ export default Ember.Route.extend({
         content: 'Some content for the tab 3'
       }
     ];
+    tabItems = tabItems.map(function(item){
+      return Ember.Object.create(item);
+    });
     return tabItems;
   }
 });
